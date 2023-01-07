@@ -1,0 +1,839 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    list-style: none;
+}
+
+body {
+    overflow-X: hidden;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.topBar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background-color: #000;
+    z-index: 99;
+}
+
+.topBar-int {
+    display: flex;
+    width: 100%;
+    max-width: 1250px;
+    height: 100px;
+    margin: 0 auto;
+}
+
+.topBar-int .logo {
+    width: 220px;
+    height: 100px;
+}
+
+.topBar-int .menu {
+    flex: 1;
+    height: 100px;
+}
+
+.topBar-int .logo {
+    display: flex;
+    align-items: center;
+}
+
+.topBar-int .logo img {
+    width: 140px;
+    height: 50px;
+}
+
+/* menu */
+.menu ul,
+.menu li {
+    margin: 0;
+    padding: 0;
+}
+
+.menu ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu li {
+    height: 100px;
+    line-height: 100px;
+}
+
+.menu li a {
+    display: flex;
+    text-decoration: none;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.menu li ion-icon {
+    transition: 0.5s;
+    line-height: 100px;
+    height: 100px;
+    margin-left: 8px;
+}
+
+.item:hover span {
+    color: #c41066;
+}
+
+.item:hover ion-icon {
+    transform: rotate(90deg);
+    color: #c41066;
+}
+
+/* sub-menu */
+.sub-menu {
+    display: none;
+    position: absolute;
+    background-color: #c41066;
+}
+
+.item:hover .sub-menu {
+    display: block;
+}
+
+.sub-menu-title {
+    width: 200px;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 40px;
+    border-bottom: 1px dashed #cc2876;
+}
+
+.sub-menu .sub-menu-title a {
+    padding-left: 10px;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.sub-menu-title .title-dev {
+    font-size: 12px;
+    font-weight: 500;
+    color: #fff;
+    padding-left: 10px;
+    background-color: #c41066;
+    border-bottom: 1px dashed #cc2876
+}
+
+.title-dev:hover {
+    background-color: #000;
+    color: #c41066;
+}
+
+.sub-menu-title:hover {
+    background-color: #000;
+    color: #c41066;
+    cursor: pointer;
+}
+
+.sub-menu-link {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 202px;
+    width: 300px;
+    background-color: #c41066;
+}
+
+.sub-menu-title .sub-menu-link a {
+    color: #fff;
+    font-size: 12px;
+    font-weight: 500;
+    padding-left: 10px;
+    border-bottom: 1px dashed #cc2876;
+}
+
+.sub-menu-link a:hover {
+    background-color: #000;
+    color: #c41066;
+}
+
+.sub-menu-title:hover .sub-menu-link {
+    display: block;
+}
+
+/* course */
+.course {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background-color: #333;
+}
+
+.course-title {
+    padding: 40px 0;
+}
+
+.course-title h2 {
+    color: #fff;
+    text-align: center;
+    font-weight: 600;
+    font-size: 40px;
+}
+
+.course-cards {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 1050px;
+    padding-bottom: 50px;
+}
+
+.course-card {
+    position: relative;
+    width: 316px;
+    height: 156px;
+    background-color: #000;
+    border-radius: 20px;
+    margin-bottom: 36px;
+}
+
+.card-content {
+    position: absolute;
+    padding: 16px;
+    z-index: 2;
+}
+
+.card-content p {
+    font-size: 14px;
+    font-weight: 500;
+    color: #fff;
+}
+
+.card-content h3 {
+    padding: 30px 0;
+    font-size: 26px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.card-content h2 {
+    padding: 10px 0;
+    font-size: 26px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.card-content span {
+    font-size: 12px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.card-marketing,
+.card-fullstack,
+.card-analytics,
+.card-design,
+.card-storytelling,
+.card-scrum {
+    transition: 0.5s;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45px;
+    height: 156px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.course-card:hover .card-marketing,
+.course-card:hover .card-fullstack,
+.course-card:hover .card-analytics,
+.course-card:hover .card-design,
+.course-card:hover .card-storytelling,
+.course-card:hover .card-scrum {
+    width: 316px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.card-marketing {
+    background-color: #f9e784;
+}
+
+.card-fullstack {
+    background-color: #a2faa3;
+}
+
+.card-analytics {
+    background-color: #c41066;
+}
+
+.card-design {
+    background-color: #623cea;
+}
+
+.card-storytelling {
+    background-color: #ee4266;
+}
+
+.card-scrum {
+    background-color: #063949;
+}
+
+/* course-card-extras */
+.course-cards-extras {
+    display: flex;
+    justify-content: space-between;
+}
+
+.course-card-customers,
+.course-card-master {
+    position: relative;
+    width: 316px;
+    height: 212px;
+    background-color: #000;
+    border-radius: 20px;
+    margin-bottom: 36px;
+}
+
+.course-card-master {
+    margin-left: 50px;
+}
+
+.card-customers {
+    background-color: #043565;
+}
+
+.card-master {
+    background-color: #f6aa1c;
+}
+
+.card-customers,
+.card-master {
+    transition: 0.5s;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45px;
+    height: 212px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.course-card-customers:hover .card-customers,
+.course-card-master:hover .card-master {
+    width: 316px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+/* digital-infor */
+.digital-infor {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    min-height: 100vh;
+    background-color: #f9e784;
+}
+
+.digital-infor-int {
+    display: flex;
+    width: 100%;
+    max-width: 1280px;
+}
+
+.digital-infor-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+    height: 620px;
+}
+
+.digital-infor-photo {
+    width: 50%;
+    height: 620px;
+}
+
+.digital-infor-card {
+    display: flex;
+    align-items: center;
+    width: 624px;
+    height: 140px;
+    background-color: #623cea;
+    margin: 20px 0;
+    border-radius: 20px;
+}
+
+.digital-infor-card img {
+    width: 80px;
+    height: 80px;
+    margin: 0 20px;
+}
+
+.digital-infor-card p {
+    font-size: 26px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.digital-infor-photo {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.digital-infor-photo img {
+    width: 500px;
+    height: 500px;
+}
+
+/* banner-provi */
+.provi {
+    display: flex;
+    justify-content: center;
+    background-image: url('../images/BANNER-PROVI-DESKTOP.jpg');
+    background-position: center;
+    background-size: cover;
+    height: 440px;
+}
+
+.provi-int {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    width: 100%;
+    max-width: 1280px;
+    height: 440px;
+    padding-right: 60px;
+}
+
+.provi-title {
+    font-size: 40px;
+    color: #fff;
+    font-weight: 500;
+}
+
+.provi-title span {
+    font-weight: 700;
+}
+
+.provi-subTitle {
+    margin-top: 40px;
+    font-size: 26px;
+    color: #fff;
+    font-weight: 500;
+}
+
+.provi-subTitle span {
+    font-weight: 700;
+}
+
+.btn-provi {
+    display: flex;
+    align-items: flex-end;
+    padding-left: 60px;
+    width: 40%;
+    height: 80px;
+}
+
+.btn-provi button {
+    width: 200px;
+    height: 50px;
+    border-radius: 30px;
+    background-color: #f6cd06;
+    color: #c41066;
+    outline: none;
+    border: none;
+    font-size: 26px;
+    font-weight: 600;
+}
+
+/* benefits */
+.benefits {
+    display: flex;
+    justify-content: center;
+    width: 100;
+    min-height: 100vh;
+}
+
+.benefits-int {
+    width: 100%;
+    max-width: 1280px;
+    min-height: 100vh;
+}
+
+.benefits-title {
+    padding: 60px 0;
+}
+
+.benefits-title h2 {
+    font-size: 40px;
+    font-weight: 600;
+    color: #000;
+    text-align: center;
+}
+
+.benefits-cards {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.benefits-card-content {
+    width: 300px;
+    margin-bottom: 50px;
+}
+
+.benefits-card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.benefits-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 120px;
+    background-color: #c41066;
+    border-radius: 22px;
+    font-size: 100px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.benefits-infor {
+    font-size: 24px;
+    color: #333;
+    font-weight: 500;
+    padding: 20px 24px;
+    text-align: center;
+}
+
+.benefits-description {
+    font-size: 26px;
+    font-size: 500;
+    color: #333;
+    text-align: center;
+    margin-top: 40px;
+    padding: 0 100px;
+}
+
+.benefits-description-title {
+    font-size: 40px;
+    font-weight: 600;
+    color: #000;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.benefits-description-infor {
+    padding: 30px 120px;
+}
+
+.benefits-description-infor p {
+    font-size: 26px;
+    font-weight: 500;
+    color: #333;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* operation */
+.operation {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.operation-int {
+    width: 100%;
+    max-width: 1280px;
+    background-color: #02394a;
+    border-radius: 30px;
+    height: 100vh;
+}
+
+.operation-title {
+    font-size: 40px;
+    font-weight: 600;
+    color: #fff;
+    text-align: center;
+    padding: 60px 0;
+}
+
+.operation-line-time {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 1160px;
+    height: 116px;
+    background-color: #a2faa3;
+    margin: 0 auto;
+    border-radius: 30px;
+}
+
+.operation-bar-line {
+    position: absolute;
+    width: 1000px;
+    height: 10px;
+    background-color: #623cea;
+    border-radius: 10px;
+}
+
+.operation-line-circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    background-color: #fff;
+    z-index: 2;
+}
+
+.operation-line-circle-int {
+    width: 25px;
+    height: 25px;
+    border-radius: 30px;
+    background-color: #623cea;
+}
+
+.operation-description {
+    display: flex;
+    justify-content: center;
+    width: 1160px;
+    height: 30px;
+    margin: 0 auto;
+}
+
+.operation-description h2 {
+    padding: 30px 10px;
+    font-size: 28px;
+    font-weight: 700;
+    color: #a2faa3;
+    text-align: center;
+}
+
+.operation-description p {
+    padding: 20px 20px;
+    font-size: 18px;
+    font-weight: 300;
+    color: #fff;
+    text-align: center;
+    line-height: 30px;
+}
+
+/* teaching */
+.teaching {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 20px 0;
+}
+
+.teaching-int {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 1280px;
+}
+
+.teaching-left {
+    width: 50%;
+    height: 600px;
+    padding-top: 20px;
+    padding-right: 10px;
+    padding-bottom: 20px;
+}
+
+.teaching-left img {
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+}
+
+.teaching-right {
+    width: 50%;
+    height: 600px;
+    padding-top: 20px;
+    padding-left: 10px;
+    padding-bottom: 20px;
+}
+
+.teaching-right-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 50px;
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    background-color: #c41066;
+}
+
+.teaching-right-content h2 {
+    font-size: 40px;
+    color: #f9e784;
+    margin-bottom: 30px;
+}
+
+.teaching-right-content-infor p {
+    font-size: 18px;
+    color: #fff;
+    font-weight: 300;
+    margin: 16px 0;
+}
+
+/* work */
+.work {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 0;
+    width: 1280px;
+    min-height: 400px;
+    margin: 0 auto;
+}
+
+.work-title {
+    font-size: 50px;
+    color: #000;
+    font-weight: 600;
+    text-align: center;
+    line-height: 45px;
+}
+
+.work-description {
+    font-size: 20px;
+    color: #333;
+    font-weight: 500;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+/* certificationspartners */
+.certificationsPartners {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 200px;
+    background-color: #ccc;
+}
+
+.certificationsPartners-photo img {
+    width: 280px;
+    height: 180px;
+}
+
+/* footer */
+footer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 350px;
+    background-color: #000;
+}
+
+.footer-infor {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1090px;
+}
+
+.footer-infor-logo {
+    line-height: 36px;
+}
+
+.footer-infor-logo img {
+    width: 200px;
+    height: 80px;
+}
+
+.footer-infor p {
+    font-size: 14px;
+    font-weight: 700;
+    color: #c41066;
+    line-height: 18px;
+}
+
+.footer-infor span {
+    font-size: 10px;
+    font-weight: 300;
+    color: #fff;
+}
+
+.access p {
+    font-size: 14px;
+    font-weight: 700;
+    color: #c41066;
+}
+
+.access a {
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+    text-decoration: none;
+    line-height: 36px;
+}
+
+.footer-infor-address p {
+    font-size: 14px;
+    font-weight: 700;
+    color: #c41066;
+}
+
+.footer-infor-address span {
+    font-size: 16px;
+    font-weight: 300;
+    color: #fff;
+    line-height: 36px;
+}
+
+.rights {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 300;
+    background-color: #000;
+    text-align: center;
+    padding-bottom: 30px;
+}
+.floating{
+    position: fixed;
+    bottom: 40px;
+    z-index: 99;
+    right: 20px;
+}
+.floating img{
+    width: 420px;
+    height: 100px;
+    animation-name: zoom;
+    animation-duration: 0.9s;
+    animation-iteration-count: infinite;
+    cursor: pointer;
+}
+@keyframes zoom{
+    to{
+        transform: scale(0.9);
+    }
+   
+}
